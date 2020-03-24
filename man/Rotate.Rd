@@ -1,0 +1,35 @@
+\name{Rotate}
+\alias{Rotate}
+\title{Rotating point on sphere}
+\description{
+Rotate a point on the unit sphere.
+}
+\usage{
+Rotate(pt1, pt2)
+}
+\arguments{
+  \item{pt1}{a spatial location.}
+  \item{pt2}{a spatial location.}
+}
+\details{
+This function rotates \code{pt2} to the extent that \code{pt1} to spherical coordinate (0, 90).
+The function returns a point as a form of three-dimensional Euclidean coordinate.
+}
+\value{
+three-dimensional vector.
+}
+\references{
+https://en.wikipedia.org/wiki/Rodrigues_rotation_formula
+}
+\author{
+Jongmin Lee
+}
+\seealso{
+\code{\link{Rotate.inv}}.
+}
+\examples{
+## If "pt1" is north pole (= (0, 90)), then \code{Rotate} returns Euclidean coordinate of "pt2".
+Rotate(c(0, 90), c(10, 10))   # It returns Euclidean coornate of spatial location (10, 10).
+# \code{Trans.Euclid} converts spatial coordinate (10, 10) to Euclidean coordinate.
+Trans.Euclid(c(10, 10))       
+}
