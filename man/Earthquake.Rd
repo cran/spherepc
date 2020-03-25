@@ -26,9 +26,9 @@ PGA(earthquake)
 #### example 2: principal circle
 circle <- PrincipalCircle(earthquake)          # get center and radius of principal circle.
 PC <- GenerateCircle(circle[1:2], circle[3])   # generate Principal circle.
-rgl.sphgrid()                                  # plot
-rgl.sphpoints(earthquake, radius = 1, col = "blue", size = 12)
-rgl.sphpoints(PC, radius = 1, col = "red", size = 9)
+sphereplot::rgl.sphgrid()                      # plot
+sphereplot::rgl.sphpoints(earthquake, radius = 1, col = "blue", size = 12)
+sphereplot::rgl.sphpoints(PC, radius = 1, col = "red", size = 9)
 
 #### example 3: spherical principal curves (SPC, SPC.Hauberg)
 SPC(earthquake)         # spherical principal curves.

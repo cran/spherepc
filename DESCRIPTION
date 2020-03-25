@@ -1,7 +1,7 @@
 Package: spherepc
 Type: Package
 Title: Spherical Principal Curves
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: c(person("Jongmin", "Lee", role = c("aut", "cre"), 
     email ="jongminlee9218@gmail.com"), person("Jang-Hyun", "Kim", role = "ctb"),   
     person("Hee-Seok", "Oh", role = "aut", email = "heeseok@stats.snu.ac.kr"))
@@ -21,6 +21,6 @@ Imports: rgl, sphereplot, geosphere
 SystemRequirements: XQuartz
 LazyData: true
 NeedsCompilation: no
-Packaged: 2020-03-22 08:41:17 UTC; jongminlee
+Packaged: 2020-03-25 11:24:53 UTC; jongminlee
 Repository: CRAN
-Date/Publication: 2020-03-24 16:40:02 UTC
+Date/Publication: 2020-03-25 14:10:06 UTC

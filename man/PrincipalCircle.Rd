@@ -39,14 +39,14 @@ half.great.circle <- circle[circle[, 1] < 0, , drop = FALSE]
 sigma <- 2
 half.great.circle <- half.great.circle + sigma * rnorm(nrow(half.great.circle))
 ## find a principal circle
-\dontrun{
+\donttest{
 PC <- PrincipalCircle(half.great.circle)
 result <- GenerateCircle(PC[1:2], PC[3])
 ## plot
 rgl.sphgrid()
 rgl.sphpoints(half.great.circle, radius = 1, col = "blue", size = 12)
 rgl.sphpoints(result, radius = 1, col = "red", size = 6)
-}
+
 #### example 2: circular data
 n <- 700                            
 x <- seq(-180, 180, length.out = n)
@@ -57,21 +57,20 @@ simul.circle <- cbind(x, y)
 PC <- PrincipalCircle(simul.circle)
 result <- GenerateCircle(PC[1:2], PC[3])
 ## plot
-rgl.sphgrid()
-rgl.sphpoints(simul.circle, radius = 1, col = "blue", size = 12)
-rgl.sphpoints(result, radius = 1, col = "red", size = 6)
+sphereplot::rgl.sphgrid()
+sphereplot::rgl.sphpoints(simul.circle, radius = 1, col = "blue", size = 12)
+sphereplot::rgl.sphpoints(result, radius = 1, col = "red", size = 6)
 
 #### example 3: earthquake data
 data(Earthquake)
 names(Earthquake)
-earthquake <- cbind(Earthquake$longitude, Earthquake$latitude)   
-\donttest{
+earthquake <- cbind(Earthquake$longitude, Earthquake$latitude) 
 PC <- PrincipalCircle(earthquake)
-}
 result <- GenerateCircle(PC[1:2], PC[3])
 ## plot
-rgl.sphgrid(col.long = "black", col.lat = "black")
-rgl.sphpoints(earthquake, radius = 1, col = "blue", size = 12)
-rgl.sphpoints(result, radius = 1, col = "red", size = 6)
+sphereplot::rgl.sphgrid(col.long = "black", col.lat = "black")
+sphereplot::rgl.sphpoints(earthquake, radius = 1, col = "blue", size = 12)
+sphereplot::rgl.sphpoints(result, radius = 1, col = "red", size = 6)
+}
 }
 \keyword{ ~principal nested sphere }

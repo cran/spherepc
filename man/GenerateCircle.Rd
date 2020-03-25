@@ -30,6 +30,6 @@ library(sphereplot)
 library(geosphere)
 circle <- GenerateCircle(c(0, 0), 1)
 # plot (It requires to load 'rgl', 'sphereplot', and 'geosphere' R package.)
-rgl.sphgrid()
-rgl.sphpoints(circle[, 1], circle[, 2], radius = 1, col = "blue", size = 12)
+sphereplot::rgl.sphgrid()
+sphereplot::rgl.sphpoints(circle[, 1], circle[, 2], radius = 1, col = "blue", size = 12)
 }

@@ -59,9 +59,7 @@ library(geosphere)
 data(Earthquake)
 names(Earthquake)
 earthquake <- cbind(Earthquake$longitude, Earthquake$latitude)
-\donttest{
-SPC.Hauberg(earthquake, q = 0.1)
-}
+\donttest{SPC.Hauberg(earthquake, q = 0.1)}
 #### example 2: waveform data
 n <- 200
 alpha <- 1/3    # amplitude
@@ -70,9 +68,7 @@ sigma <- 2
 lon <- seq(-180, 180, length.out = n)
 lat <- alpha * 180/pi * sin(lon * pi/180 * freq) + 10 + sigma * rnorm(length(lon))
 wave <- cbind(lon, lat)
-\donttest{
-SPC.Hauberg(wave, q = 0.05)
-}
+\donttest{SPC.Hauberg(wave, q = 0.05)}
 }
 \keyword{ ~principal curves }
 \keyword{ ~spherical surface }

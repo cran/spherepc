@@ -1,2 +1,7 @@
+# Export all names
 exportPattern(".")
+
+import("rgl")
 importFrom("stats", "na.omit")
+importFrom("sphereplot", "rgl.sphgrid", "rgl.sphpoints")
+importFrom("geosphere", "makeLine", "dist2Line")

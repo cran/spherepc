@@ -48,8 +48,8 @@ In.mean <- IntrinsicMean(data)
 Ex.mean <- ExtrinsicMean(data)
 ## plot (color of data is "blue"; that of intrinsic mean is "red" and 
 ## that of extrinsic mean is "green".)
-rgl.sphgrid()    
-rgl.sphpoints(data, radius = 1, col = "blue", size = 12)
-rgl.sphpoints(In.mean[1], In.mean[2], radius = 1, col = "red", size = 12)
-rgl.sphpoints(Ex.mean[1], Ex.mean[2], radius = 1, col = "green", size = 12)
+sphereplot::rgl.sphgrid()    
+sphereplot::rgl.sphpoints(data, radius = 1, col = "blue", size = 12)
+sphereplot::rgl.sphpoints(In.mean[1], In.mean[2], radius = 1, col = "red", size = 12)
+sphereplot::rgl.sphpoints(Ex.mean[1], Ex.mean[2], radius = 1, col = "green", size = 12)
 }
