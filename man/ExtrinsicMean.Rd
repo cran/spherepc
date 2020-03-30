@@ -20,7 +20,7 @@ two-dimensional vector.
 }
 \note{
 In the case of spheres, if data set is not contained in a hemisphere, then 
-it is possible that the extrinsic mean of the data set does not exists, for example,
+it is possible that the extrinsic mean of the data set does not exists, such as
 a great circle.
 }
 \author{

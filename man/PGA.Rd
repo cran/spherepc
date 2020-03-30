@@ -5,13 +5,13 @@
 This function performs principal geodesic analysis.
 }
 \usage{
-PGA(data, col1 = "blue", col2 = "red")
+PGA(data, col = c("blue", "red"), size = c(12, 6))
 }
 \arguments{
   \item{data}{matrix or data frame consisting of spatial locations with two columns.
   Each row represents longitude and latitude.}
-  \item{col1}{color of data.}
-  \item{col2}{color of the resulting line.}
+  \item{col}{two-dimensional vector which represents colors of data and the principal geodesic line.}
+  \item{size}{two-dimensional vector which represents sizes of data and the principal geodesic line.}
 }
 \details{
 This function performs principal geodesic analysis.
@@ -57,4 +57,4 @@ simul.S2 <- cbind(z, w)
 simul.S <- rbind(simul.S1, simul.S2)
 PGA(simul.S)
 }
-
+\keyword{ ~principal geodesic analysis }

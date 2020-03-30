@@ -7,7 +7,7 @@ This function fits a principal curve by Hauberg on the sphere.
 \usage{
 SPC.Hauberg(data, q = 0.1, T = nrow(data), step.size = 1e-3, maxit = 30, 
 type = "Intrinsic", thres = 1e-2, deletePoints = FALSE, plot.proj = FALSE, 
-kernel = "quartic", col1 = "blue", col2 = "green", col3 = "red")
+kernel = "quartic", col = c("blue", "green", "red", "black"), size = c(12, 6, 6))
 }
 \arguments{
   \item{data}{matrix or data frame consisting of spatial locations with two columns. Each row represents longitude and latitude.}
@@ -20,9 +20,8 @@ kernel = "quartic", col1 = "blue", col2 = "green", col3 = "red")
   \item{deletePoints}{logical value. The argument is an option of whether to delete points or not. If \code{deletePoints} is FALSE, this function leaves the points in curves which do not have adjacent data for each expectation step. As a result, the function usually returns a closed curve, i.e., a curve without endpoints. If \code{deletePoints} is TRUE, this function deletes the points in curves which do not have adjacent data for each expectation step. As a result, The \code{SPC} function usually returns an open curve, i.e., a curve with endpoints. The default is FALSE.}
   \item{plot.proj}{logical value. If the argument is TRUE, the projection line for each data is plotted. The default is FALSE.}
   \item{kernel}{kind of kernel function. The default is quartic kernel and alternatives are indicator or Gaussian.}
-  \item{col1}{color of data.}
-  \item{col2}{color of points in the principal curves.}
-  \item{col3}{color of line of the principal curves.}
+  \item{col}{four-dimensional vector which represents colors of data, points in the resulting curves, the connecting line between points in the resulting curves, and projection lines, respectively.}
+  \item{size}{three-dimensional vector which represents sizes of data, points in the principal curves, and the connecting line between points in the curves, respectively.}
 }
 \details{
 This function fits a principal curve proposed by Hauberg on the sphere, and requires to load the 'rgl', 'sphereplot', and 'geosphere' R packages.

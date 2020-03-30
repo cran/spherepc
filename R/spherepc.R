@@ -2,18 +2,15 @@
 ### Spherical principal curves
 ############################################################################
 
-#rm(list = ls())
-
 ### install rgl, sphereplot, and geosphere packages--------------------------
 
 #install.packages("rgl")
 #install.packages("sphereplot")
 #install.packages("geosphere")
 
-#require(rgl)
-#require(sphereplot)
-#require(geosphere)
-
+#library(rgl)
+#library(sphereplot)
+#library(geosphere)
 
 ##########################################################################
 # Define funcions
@@ -250,7 +247,7 @@ GenerateCircle <- function(center, radius, T = 1000){
    return(generate.circle)
  }
 
- PGA <- function(data, col1 = "blue", col2 = "red"){
+ PGA <- function(data, col = c("blue", "red"), size = c(12, 6)){
   # data should be a matrix or data frame with 2 column (longitude / latitude).
   center <- IntrinsicMean(data)
   ant <- Trans.sph(-Trans.Euclid(center))
@@ -270,8 +267,8 @@ GenerateCircle <- function(center, radius, T = 1000){
   line <- geosphere::makeLine(rbind(center, mid, ant, mid.ant, center))
   # plot
   sphereplot::rgl.sphgrid(col.long = "black", col.lat = "black")
-  sphereplot::rgl.sphpoints(data, radius = 1, col = col1, size = 12)
-  sphereplot::rgl.sphpoints(line, radius = 1, col = col2, size = 6)
+  sphereplot::rgl.sphpoints(data, radius = 1, col = col[1], size = size[1])
+  sphereplot::rgl.sphpoints(line, radius = 1, col = col[2], size = size[2])
   fit <- list(line = line)
   return(fit)
 }
@@ -313,7 +310,7 @@ GenerateCircle <- function(center, radius, T = 1000){
  #######################################
  SPC <- function(data, q = 0.1, T = nrow(data), step.size = 1e-3, maxit = 30, type = "Intrinsic", thres = 1e-2,
                  deletePoints = FALSE, plot.proj = FALSE, kernel = "quartic", 
-                 col1 = "blue", col2 = "green", col3 = "red"){
+                 col = c("blue", "green", "red", "black"), size = c(12, 6, 6)){
    # Data: matrix or data.frame of data points represented by angular form of (longitude, latitude).
    # q: Smoothing parameter in Expectation step.
    # T: The number of points in circle.
@@ -409,9 +406,9 @@ GenerateCircle <- function(center, radius, T = 1000){
         converged <- FALSE 
      }
      sphereplot::rgl.sphgrid(col.long = "black", col.lat = "black")                                                             # plot the data and principal curves.
-     sphereplot::rgl.sphpoints(data[, 1], data[, 2], radius = 1, col = col1, size = 12)
-     sphereplot::rgl.sphpoints(principal.curves[, 1], principal.curves[, 2], radius = 1, col = col2, size = 6)
-     sphereplot::rgl.sphpoints(line[, 1], line[, 2], radius = 1, col = col3, size = 6)
+     sphereplot::rgl.sphpoints(data[, 1], data[, 2], radius = 1, col = col[1], size = size[1])
+     sphereplot::rgl.sphpoints(principal.curves[, 1], principal.curves[, 2], radius = 1, col = col[2], size = size[2])
+     sphereplot::rgl.sphpoints(line[, 1], line[, 2], radius = 1, col = col[3], size = size[3])
 
      if (plot.proj == TRUE){
      line.proj <- matrix(ncol = 2)
@@ -421,7 +418,7 @@ GenerateCircle <- function(center, radius, T = 1000){
          }else{
            line.proj <- geosphere::makeLine(rbind(data[i, ], data[i, ], proj[i, 2:3]))
          }
-         sphereplot::rgl.sphpoints(line.proj[, 1], line.proj[, 2], radius = 1, col = "black")
+         sphereplot::rgl.sphpoints(line.proj[, 1], line.proj[, 2], radius = 1, col = col[4])
        }
      }
      
@@ -433,7 +430,7 @@ GenerateCircle <- function(center, radius, T = 1000){
  
  SPC.Hauberg <- function(data, q = 0.1, T = nrow(data), step.size = 1e-3, maxit = 30, type = "Intrinsic",
                          thres = 1e-2, deletePoints = FALSE, plot.proj = FALSE, kernel = "quartic",
-                         col1 = "blue", col2 = "green", col3 = "red"){
+                         col = c("blue", "green", "red", "black"), size = c(12, 6, 6)){
   # Data: matrix or data.frame of data points represented by angular form of (longitude, latitude).
   # q: Smoothing parameter in Expectation step.
   # T: The number of points in circle.
@@ -527,9 +524,9 @@ GenerateCircle <- function(center, radius, T = 1000){
    converged <- FALSE
  }
  sphereplot::rgl.sphgrid(col.long = "black", col.lat = "black")                                                                                # Plot the data and principal curves.
- sphereplot::rgl.sphpoints(data[, 1], data[, 2], radius = 1, col = col1, size = 12)
- sphereplot::rgl.sphpoints(principal.curves[, 1], principal.curves[, 2], radius = 1, col = col2, size = 6)
- sphereplot::rgl.sphpoints(line[, 1], line[, 2], radius = 1, col = col3, size = 6)
+ sphereplot::rgl.sphpoints(data[, 1], data[, 2], radius = 1, col = col[1], size = size[1])
+ sphereplot::rgl.sphpoints(principal.curves[, 1], principal.curves[, 2], radius = 1, col = col[2], size = size[2])
+ sphereplot::rgl.sphpoints(line[, 1], line[, 2], radius = 1, col = col[3], size = size[3])
  
  if (plot.proj == TRUE){
    line.proj <- matrix(ncol = 2)
@@ -539,7 +536,7 @@ GenerateCircle <- function(center, radius, T = 1000){
      }else{
        line.proj <- geosphere::makeLine(rbind(data[i, ], data[i, ], proj[i, ]))
      }
-     sphereplot::rgl.sphpoints(line.proj[, 1], line.proj[, 2], radius = 1, col = "black")
+     sphereplot::rgl.sphpoints(line.proj[, 1], line.proj[, 2], radius = 1, col = col[4])
    }
  }
  fit <- list(prin.curves = principal.curves, line = line, converged = converged, iteration = iter,
@@ -553,7 +550,7 @@ GenerateCircle <- function(center, radius, T = 1000){
   ######################################
 
   LPG <- function(data, scale = 0.04, tau = scale/3, nu = 0, maxpt = 500, seed = NULL,
-         kernel = "indicator", thres = 1e-4, col1 = "blue", col2 = "green", col3 = "red"){
+         kernel = "indicator", thres = 1e-4, col = c("blue", "green", "red"), size = c(12, 4, 6)){
     #  Data   a matrix or data.frame of data points represented by angular form of (longitude, latitude).
     # 'scale' is a scale parameter (LPG scaleing region).
     #  For each LPG step, the curve proceed by 'tau'. (step size of the algorithm)
@@ -768,9 +765,9 @@ GenerateCircle <- function(center, radius, T = 1000){
      }
 
      sphereplot::rgl.sphgrid(col.long = "black", col.lat = "black")                                                              # plot the result.
-     sphereplot::rgl.sphpoints(data.raw, radius = 1, col = col1, size = 12)
-     sphereplot::rgl.sphpoints(dim.redu, radius = 1, col = col2, size = 4)
-     sphereplot::rgl.sphpoints(line, radius = 1, col = col3, size = 6)
+     sphereplot::rgl.sphpoints(data.raw, radius = 1, col = col[1], size = size[1])
+     sphereplot::rgl.sphpoints(dim.redu, radius = 1, col = col[2], size = size[2])
+     sphereplot::rgl.sphpoints(line, radius = 1, col = col[3], size = size[3])
      
      fit <- list(num.curves = num.curves, prin.curves = dim.redu.LPG, line = line)
      return(fit)

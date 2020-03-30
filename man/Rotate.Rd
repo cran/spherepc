@@ -28,8 +28,8 @@ Jongmin Lee
 \code{\link{Rotate.inv}}.
 }
 \examples{
-## If "pt1" is north pole (= (0, 90)), then \code{Rotate} returns Euclidean coordinate of "pt2".
+## If "pt1" is north pole (= (0, 90)), Rotate() function returns Euclidean coordinate of "pt2".
 Rotate(c(0, 90), c(10, 10))   # It returns Euclidean coornate of spatial location (10, 10).
-# \code{Trans.Euclid} converts spatial coordinate (10, 10) to Euclidean coordinate.
+# The Trans.Euclid() function converts spatial coordinate (10, 10) to Euclidean coordinate.
 Trans.Euclid(c(10, 10))       
 }

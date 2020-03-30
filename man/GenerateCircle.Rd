@@ -33,3 +33,4 @@ circle <- GenerateCircle(c(0, 0), 1)
 sphereplot::rgl.sphgrid()
 sphereplot::rgl.sphpoints(circle[, 1], circle[, 2], radius = 1, col = "blue", size = 12)
 }
+\keyword{ ~principal nested sphere }

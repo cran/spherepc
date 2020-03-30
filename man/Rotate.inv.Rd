@@ -28,7 +28,7 @@ Jongmin Lee
 \code{\link{Rotate}}.
 }
 \examples{
-## If "pt1" is north pole (= (0, 90)), then \code{Rotate.inv} returns Euclidean coordinate of "pt2".
+## If "pt1" is north pole (= (0, 90)), Rotate.inv() returns Euclidean coordinate of "pt2".
 # It returns Euclidean coornate of spatial location (-100, 80).
 Rotate.inv(c(0, 90), c(-100, 80)) 
 # It converts spatial coordinate (-100, 80) to Euclidean coordinate.

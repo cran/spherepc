@@ -6,8 +6,8 @@ Locally definded principal geodesic analysis.
 }
 \usage{
 LPG(data, scale = 0.04, tau = scale/3, nu = 0, maxpt = 500,
-seed = NULL, kernel = "indicator", thres = 1e-4, col1 = "blue", 
-col2 = "green", col3 = "red")
+seed = NULL, kernel = "indicator", thres = 1e-4, 
+col = c("blue", "green", "red"), size = c(12, 4, 6))
 }
 \arguments{
   \item{data}{matrix or data frame consisting of spatial locations with two columns.
@@ -19,9 +19,8 @@ col2 = "green", col3 = "red")
   \item{seed}{random seed number.}
   \item{kernel}{kind of kernel function. The default is the indicator kernel and alternatives are quartic or Gaussian.}
   \item{thres}{threshold of the stopping condition for the \code{IntrinsicMean} contained in the \code{LPG} function.}
-  \item{col1}{color of data.}
-  \item{col2}{color of points in the resulting curves.}
-  \item{col3}{color of the connecting line between points in the resulting curves.}
+  \item{col}{three-dimensional vector which represents colors of data, points in the resulting curves, and the connecting line between points in the resulting curves, respectively.}
+  \item{size}{three-dimensional vector which represents sizes of data, points in the resulting curves, and the connecting line between points in the resulting curves, respectively.}
 }
 \details{
 Locally definded principal geodesic analysis. The result is sensitive to \code{scale} and \code{nu}, especially \code{scale} should be carefully chosen according to the structure of the given data.
@@ -30,7 +29,7 @@ Locally definded principal geodesic analysis. The result is sensitive to \code{s
 plot and a list consisting of
 \item{prin.curves}{spatial locations of points in the resulting curves.}
 \item{line}{connecting line between points of \code{prin.curves}.}
-\item{num.curve}{the number of the resulting curves.}
+\item{num.curves}{the number of the resulting curves.}
 }
 \author{
 Jongmin Lee
@@ -181,3 +180,4 @@ LPG(tree, scale = 0.03, nu = 0.1, seed = 7)
 }
 }
 \keyword{ ~principal geodesic analysis }
+\keyword{ ~principal curves }
