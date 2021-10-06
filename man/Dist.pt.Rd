@@ -12,7 +12,7 @@ Dist.pt(data)
   Each row represents longitude and latitude.}
 }
 \details{
-This function calculates the number of distinct point in the given data.
+This function calculates the number of distinct points in the given data.
 }
 \value{
 a numeric.

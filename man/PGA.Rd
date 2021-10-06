@@ -5,20 +5,20 @@
 This function performs principal geodesic analysis.
 }
 \usage{
-PGA(data, col = c("blue", "red"), size = c(12, 6))
+PGA(data, col1 = "blue", col2 = "red")
 }
 \arguments{
   \item{data}{matrix or data frame consisting of spatial locations with two columns.
-  Each row represents longitude and latitude.}
-  \item{col}{two-dimensional vector which represents colors of data and the principal geodesic line.}
-  \item{size}{two-dimensional vector which represents sizes of data and the principal geodesic line.}
+  Each row represents longitude and latitude (denoted by degrees.}
+  \item{col1}{color of data. The default is blue.}
+  \item{col2}{color of the principal geodesic line. The default is red}
 }
 \details{
 This function performs principal geodesic analysis.
 }
 \value{
 plot and a list consisting of
- \item{line}{spatial locations of points in the principal geodesic line.}
+ \item{line}{spatial locations (longitude and latitude by degrees) of points in the principal geodesic line.}
 }
 \references{
 Fletcher, P. T., Lu, C., Pizer, S. M. and Joshi, S. (2004). Principal geodesic analysis for the study of nonlinear statistics of shape. IEEE Transactions on Medical Imaging, 23, 995-1005.
@@ -37,7 +37,7 @@ library(rgl)
 library(sphereplot)
 library(geosphere)
 #### example 1: noisy half-great circle data
-circle <- GenerateCircle(c(150, 60), radius = pi / 2)
+circle <- GenerateCircle(c(150, 60), radius = pi/2)
 half.circle <- circle[circle[, 1] < 0, , drop = FALSE]
 sigma <- 2
 half.circle <- half.circle + sigma * rnorm(nrow(half.circle))

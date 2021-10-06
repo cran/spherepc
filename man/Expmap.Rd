@@ -2,13 +2,13 @@
 \alias{Expmap}
 \title{Exponential map}
 \description{
-This function performs the exponential map at (0, 0, 1) on the unit sphere.
+This function performs the exponential map at (0, 0, 1) on the unit 2-sphere.
 }
 \usage{
 Expmap(vec)
 }
 \arguments{
-  \item{vec}{an element of two-dimensional Euclidean space.}
+  \item{vec}{element of two-dimensional Euclidean vector space.}
 }
 \details{
 This function performs exponential map at (0, 0, 1) on the unit sphere.

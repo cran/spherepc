@@ -8,7 +8,7 @@ This function performs the logarithm map at (0, 0, 1) on the unit sphere.
 Logmap(vec)
 }
 \arguments{
-  \item{vec}{an element of the unit sphere in three-dimensional Euclidean space.}
+  \item{vec}{element of the unit sphere in three-dimensional Euclidean vector space.}
 }
 \details{
 This function performs the logarithm map at (0, 0, 1) on the unit sphere. Note that, \code{vec} is normalized to be contained in the unit sphere.

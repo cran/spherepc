@@ -1,7 +1,7 @@
 Package: spherepc
 Type: Package
 Title: Spherical Principal Curves
-Version: 0.1.4
+Version: 0.1.5
 Authors@R: c(person("Jongmin", "Lee", role = c("aut", "cre"), 
     email ="jongminlee9218@gmail.com"), person("Jang-Hyun", "Kim", role = "ctb"),   
     person("Hee-Seok", "Oh", role = "aut", email = "heeseok@stats.snu.ac.kr"))
@@ -9,11 +9,12 @@ Author: Jongmin Lee [aut, cre],
   Jang-Hyun Kim [ctb],
   Hee-Seok Oh [aut]
 Maintainer: Jongmin Lee <jongminlee9218@gmail.com>
-Description: Fitting a principal curve to data lying in the spherical surface.
-    This package provides principal circle, principal geodesic analysis, Hauberg's      
-    principal curves, and spherical principal curves. Moreover, it offers locally   
-    defined principal geodesics which are currently under study. The detailed procedures 
-    are described in Jang-Hyun Kim, Jongmin Lee and Hee-Seok Oh (2020) <arXiv:2003.02578>.
+Description: Fitting dimension reduction methods to data lying on two-dimensional sphere.
+    This package provides principal circle, principal geodesic analysis, Hauberg's principal curves,       
+    and spherical principal curves. Moreover, it offers the method of locally   
+    defined principal geodesics which is underway.The detailed procedures 
+    are described in Lee, J., Kim, J.-H. and Oh, H.-S. (2021) <doi:10.1109/TPAMI.2020.3025327>. 
+    Also see Kim, J.-H., Lee, J. and Oh, H.-S. (2020) <arXiv:2003.02578>.
 Depends: R (>= 3.5.0)
 License: GPL (>= 3)
 Encoding: UTF-8
@@ -21,6 +22,6 @@ Imports: geosphere, rgl, sphereplot, stats
 SystemRequirements: XQuartz (on MacOS)
 LazyData: true
 NeedsCompilation: no
-Packaged: 2020-03-30 12:52:01 UTC; jongminlee
+Packaged: 2021-10-06 07:41:50 UTC; jongminlee
 Repository: CRAN
-Date/Publication: 2020-03-30 13:20:02 UTC
+Date/Publication: 2021-10-06 08:10:02 UTC

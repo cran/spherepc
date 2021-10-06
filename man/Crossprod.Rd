@@ -8,8 +8,8 @@ This function performs the cross product of two three-dimensional vectors.
 Crossprod(vec1, vec2)
 }
 \arguments{
-  \item{vec1}{A three-dimensional vector.}
-  \item{vec2}{A three-dimensional vector.}
+  \item{vec1}{three-dimensional vector.}
+  \item{vec2}{three-dimensional vector.}
 }
 \details{
 This function performs the cross product of two three-dimensional vectors.

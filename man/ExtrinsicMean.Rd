@@ -2,14 +2,14 @@
 \alias{ExtrinsicMean}
 \title{Finding Extrinsic Mean}
 \description{
-This function identifies the extrinsic mean of data on the sphere.
+This function identifies the extrinsic mean of data on the unit 2-sphere.
 }
 \usage{
 ExtrinsicMean(data, weights = rep(1, nrow(data)))
 }
 \arguments{
   \item{data}{matrix or data frame consisting of spatial locations with two columns.
-  Each row represents longitude and latitude.}
+  Each row represents longitude and latitude (denoted by degrees).}
   \item{weights}{vector of weights.}
 }
 \details{
@@ -20,14 +20,15 @@ two-dimensional vector.
 }
 \note{
 In the case of spheres, if data set is not contained in a hemisphere, then 
-it is possible that the extrinsic mean of the data set does not exists, such as
+it is possible that the extrinsic mean of the data set does not exists; for example,
 a great circle.
 }
 \author{
 Jongmin Lee
 }
 \references{
-Jang-Hyun Kim, Jongmin Lee, Hee-Seok Oh. (2020). Spherical Principal Curves <arXiv:2003.02578>.
+Jongmin Lee, Jang-Hyun Kim and Hee-Seok Oh. (2021). Spherical Principal Curves. IEEE Transactions on Pattern Analysis and Machine Intelligence, 43, 2165-2171. <doi.org/10.1109/TPAMI.2020.3025327>.
+Jang-Hyun Kim, Jongmin Lee and Hee-Seok Oh. (2020). Spherical Principal Curves <arXiv:2003.02578>.
 }
 \seealso{
 \code{\link{IntrinsicMean}}.

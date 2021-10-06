@@ -24,9 +24,10 @@ library(geosphere)
 PGA(earthquake)
 \donttest{
 #### example 2: principal circle
-circle <- PrincipalCircle(earthquake)          # get center and radius of principal circle.
-PC <- GenerateCircle(circle[1:2], circle[3])   # generate Principal circle.
-sphereplot::rgl.sphgrid()                      # plot
+circle <- PrincipalCircle(earthquake)          # get center and radius of principal circle
+PC <- GenerateCircle(circle[1:2], circle[3])   # generate Principal circle
+# plot
+sphereplot::rgl.sphgrid()                      
 sphereplot::rgl.sphpoints(earthquake, radius = 1, col = "blue", size = 12)
 sphereplot::rgl.sphpoints(PC, radius = 1, col = "red", size = 9)
 
