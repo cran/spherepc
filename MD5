@@ -1,6 +1,6 @@
-72c8108e5434d0cd3f95bd5ce4f3c0b9 *DESCRIPTION
+31bd6f41d8d461372859fa268a55819c *DESCRIPTION
 90c14a5e55c24f2b0dbeae09d09e0645 *NAMESPACE
-66ab06e89123730cf263d1c6961149be *R/spherepc.R
+f021705d39212b8b81ad202947a05ba3 *R/spherepc.R
 26d7581b927d60ea2c500d1076b3bac5 *data/Earthquake.rda
 b29a4a74b2aa89452fd2a0ea0c4b7ab2 *man/Cal.recon.Rd
 28b28a219c3400a8a2ba7f5dddf6fb03 *man/Crossprod.Rd
@@ -21,6 +21,6 @@ aef026cc0d0e50ac2781f1e6ea81410b *man/Proj.Hauberg.Rd
 956dfe36498b7d4e6f68cc12a4743a17 *man/Rotate.Rd
 831866035c9491306006fe071fb19e82 *man/Rotate.inv.Rd
 747e3d8855f38cf3d4b17346723b060b *man/SPC.Hauberg.Rd
-74eb0a571516651df248adfb964309cb *man/SPC.Rd
+f2b9bd213914fb0ddc731f7634974e60 *man/SPC.Rd
 c085d7b3267447e49ebf93205e5e1198 *man/Trans.Euclid.Rd
 4d20352226ce3265be1d4413da2e1f26 *man/Trans.sph.Rd

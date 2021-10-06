@@ -6,7 +6,7 @@ This function fits a spherical principal curve.
 }
 \usage{
 SPC(data, q = 0.1, T = nrow(data), step.size = 1e-3, maxit = 10, 
-type = "Intrinsic", thres = 1e-2, deletePoints = FALSE, plot.proj = FALSE, 
+type = "Intrinsic", thres = 0.1, deletePoints = FALSE, plot.proj = FALSE, 
 kernel = "quartic", col1 = "blue", col2 = "green", col3 = "red")
 }
 \arguments{
@@ -17,7 +17,7 @@ kernel = "quartic", col1 = "blue", col2 = "green", col3 = "red")
   \item{step.size}{step size of the \code{PrincipalCircle} function. The default is 0.001. The resulting principal circle is used by an initial estimate of the \code{SPC}.}
   \item{maxit}{maximum number of iterations. The default is 30.}
   \item{type}{type of mean on the sphere. The default is "Intrinsic" and the other choice is "Extrinsic".}
-  \item{thres}{threshold of the stopping condition. The default is 0.01}
+  \item{thres}{threshold of the stopping condition. The default is 0.1}
   \item{deletePoints}{logical value. The argument is an option of whether to delete points or not. If \code{deletePoints} is FALSE, this function leaves the points in curves which do not have adjacent data for each expectation step. As a result, the function usually returns a closed curve, i.e. a curve without endpoints. If \code{deletePoints} is TRUE, this function deletes the points in curves which do not have adjacent data for each expectation step. As a result, The \code{SPC} function usually returns an open curve, i.e. a curve with endpoints. The default is FALSE.}
   \item{plot.proj}{logical value. If the argument is TRUE, the projection line for each data is plotted. The default is FALSE.}
   \item{kernel}{kind of kernel function. The default is quartic kernel and alternatives are indicator or Gaussian.}

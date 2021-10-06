@@ -303,7 +303,7 @@ library(geosphere)
   ########################################
   ### Spherical Principal Curves (global)
   #######################################
-  SPC <- function(data, q = 0.1, T = nrow(data), step.size = 1e-3, maxit = 10, type = "Intrinsic", thres = 1e-2,
+  SPC <- function(data, q = 0.1, T = nrow(data), step.size = 1e-3, maxit = 10, type = "Intrinsic", thres = 0.1,
                  deletePoints = FALSE, plot.proj = FALSE, kernel = "quartic", 
                  col1 = "blue", col2 = "green", col3 = "red") {
     # 'data': matrix or data.frame of data points represented by angular form of (longitude, latitude).
@@ -312,7 +312,7 @@ library(geosphere)
     # 'step.size': It is recommended below 0.01 owing to convergence of this algorithm.
     # 'maxit': The maximum number of iterations
     # 'deletePoints': TRUE or FALSE. If it is TRUE, then for each expectation step delete the points which do not have adjacent data.
-    # If 'deletePoints' is FALSE, leave the points which do not have adjacent data for each expectation step.
+    # if 'deletePoints' is FALSE, leave the points which do not have adjacent data for each expectation step
     # 'col1' is color of 'data' and 'col2' is that of points making up the principal curves; in addition, 'col3' is the color of the principal curves.
 
     r <- 6378137                                                # earth radius (m)
@@ -390,8 +390,12 @@ library(geosphere)
       rss.old <- rss.new
       iter <- iter + 1
     }
-   
-    proj <- geosphere::dist2Line(data, prin.curves)
+    
+    if (deletePoints == FALSE){
+      proj <- geosphere::dist2Line(data, rbind(prin.curves, prin.curves[1, ]))
+    } else {
+      proj <- geosphere::dist2Line(data, prin.curves)
+    } 
     distnum <- Dist.pt(proj[, 2:3, drop = F])                                              # The number of distinct projections
     if (nrow(prin.curves) > 1){
       if (deletePoints == FALSE){ 
@@ -417,12 +421,12 @@ library(geosphere)
     if (plot.proj == TRUE){
       line.proj <- matrix(ncol = 2)
       for (i in 1:nrow(proj)){                                                            # plot the projection line
-        if (abs(sum((data[i, ] - proj[i, 2:3])^2)) < 1e-10){
-          line.proj <- data[i, , drop = F]
-        } else {
+        if (abs(sum((data[i, ] - proj[i, 2:3])^2)) > 1e-10){
           line.proj <- geosphere::makeLine(rbind(data[i, ], data[i, ], proj[i, 2:3]))
+        } else {
+          line.proj <- data[i, , drop = F]
         }
-        sphereplot::rgl.sphpoints(line.proj[, 1], line.proj[, 2], radius = 1, col = "black", size = 1)
+        sphereplot::rgl.sphpoints(line.proj[, 1], line.proj[, 2], radius = 1, col = "black", size = 4)
       }
     }
     
@@ -519,7 +523,11 @@ library(geosphere)
      iter <- iter + 1
    }
    
-   proj <- Proj.Hauberg(data, prin.curves)
+   if (deletePoints == FALSE){
+     proj <- Proj.Hauberg(data, rbind(prin.curves, prin.curves[1, ]))
+   } else {              # deletePoint == TRUE 
+     proj <- Proj.Hauberg(data, prin.curves)
+   }
    distnum <- Dist.pt(proj)                                                                  # the number of distinct projections
    if (nrow(prin.curves) > 1){
      if (deletePoints == FALSE){ 
@@ -545,12 +553,12 @@ library(geosphere)
    if (plot.proj == TRUE){
      line.proj <- matrix(ncol = 2)
      for (i in 1:nrow(proj)){                                                                               # Plot the projection line
-       if (abs(sum((data[i, ] - proj[i, ])^2)) < 1e-15){
-         line.proj <- data[i, , drop = F]
-       } else {
+       if (abs(sum((data[i, ] - proj[i, ])^2)) > 1e-10){
          line.proj <- geosphere::makeLine(rbind(data[i, ], data[i, ], proj[i, ]))
+       } else {
+         line.proj <- data[i, , drop = F]
        }
-       sphereplot::rgl.sphpoints(line.proj[, 1], line.proj[, 2], radius = 1, col = "black", size = 1)
+       sphereplot::rgl.sphpoints(line.proj[, 1], line.proj[, 2], radius = 1, col = "black", size = 4)
      }
    }
    fit <- list(prin.curves = prin.curves, line = line, converged = converged, iteration = iter,
