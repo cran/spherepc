@@ -1,4 +1,4 @@
-31bd6f41d8d461372859fa268a55819c *DESCRIPTION
+bdd5882db8af4fd0d93093283d35b59a *DESCRIPTION
 90c14a5e55c24f2b0dbeae09d09e0645 *NAMESPACE
 f021705d39212b8b81ad202947a05ba3 *R/spherepc.R
 26d7581b927d60ea2c500d1076b3bac5 *data/Earthquake.rda
@@ -16,11 +16,11 @@ ae53aed4b3f072d96cab5f79501c31e3 *man/Kernel.indicator.Rd
 a7355ea70123842a2eef84b4d0eedcf6 *man/LPG.Rd
 bf324fcea3f99fc11bcb8e5e7313c60d *man/Logmap.Rd
 a746069de30ef2917674a777d12ae0eb *man/PGA.Rd
-9cc83b1945088e5ec3ad250e69947619 *man/PrincipalCircle.Rd
-aef026cc0d0e50ac2781f1e6ea81410b *man/Proj.Hauberg.Rd
+ff08ff58bd4f76845c64f49419b50cf2 *man/PrincipalCircle.Rd
+c1d8e8738088672beb4555f2db25975c *man/Proj.Hauberg.Rd
 956dfe36498b7d4e6f68cc12a4743a17 *man/Rotate.Rd
 831866035c9491306006fe071fb19e82 *man/Rotate.inv.Rd
-747e3d8855f38cf3d4b17346723b060b *man/SPC.Hauberg.Rd
-f2b9bd213914fb0ddc731f7634974e60 *man/SPC.Rd
+4ee85024744ba277dce5bf2a8f755204 *man/SPC.Hauberg.Rd
+10499437a92a56fff55cd3c3a86188b6 *man/SPC.Rd
 c085d7b3267447e49ebf93205e5e1198 *man/Trans.Euclid.Rd
 4d20352226ce3265be1d4413da2e1f26 *man/Trans.sph.Rd

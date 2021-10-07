@@ -22,7 +22,7 @@ three-dimensional vector.
 \references{
 Jongmin Lee, Jang-Hyun Kim and Hee-Seok Oh. (2021). Spherical principal curves. IEEE Transactions on Pattern Analysis and Machine Intelligence, 43, 2165-2171. <doi.org/10.1109/TPAMI.2020.3025327>.
 
-Jongmin Lee, Jang-Hyun Kim and Hee-Seok Oh (2020), Spherical principal curves <arXiv:2003.02578>.
+Jang-Hyun Kim, Jongmin Lee and Hee-Seok Oh (2020), Spherical principal curves <arXiv:2003.02578>.
 }
 \author{
 Jongmin Lee
@@ -74,4 +74,4 @@ sphereplot::rgl.sphpoints(earthquake, radius = 1, col = "blue", size = 12)
 sphereplot::rgl.sphpoints(result, radius = 1, col = "red", size = 6)
 }
 }
-\keyword{ ~ exact principal circle }
+\keyword{ ~exact principal circle }
